@@ -58,6 +58,9 @@ export default function Home() {
         const w = base.width * scale;
         const h = base.height * scale;
 
+        const coverImage = item.coverImage;
+        const hoverImage = item.hoverImage;
+
         return (
           <Link
             key={item.label}
@@ -69,7 +72,7 @@ export default function Home() {
               transform: "translate(-50%, -50%)",
             }}
           >
-            {item.coverImage ? (
+            {coverImage ? (
               <div
                 className="relative overflow-hidden rounded"
                 style={{ width: `${w}px`, height: `${h}px` }}
@@ -77,9 +80,17 @@ export default function Home() {
                 <Image
                   fill
                   alt={item.label}
-                  className="object-contain transition-opacity duration-300 group-hover:opacity-0"
-                  src={item.coverImage}
+                  className={`object-contain ${hoverImage ? "transition-opacity duration-100 group-hover:opacity-0" : ""}`}
+                  src={coverImage}
                 />
+                {hoverImage && (
+                  <Image
+                    fill
+                    alt={item.label}
+                    className={`opacity-0 object-contain ${hoverImage ? "transition-opacity duration-100 group-hover:opacity-100" : ""}`}
+                    src={hoverImage}
+                  />
+                )}
               </div>
             ) : (
               <span
