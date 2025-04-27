@@ -8,12 +8,16 @@ export const siteConfig = {
     {
       label: "Home",
       href: "/",
+      coverImage: "/images/nav/apple.png",
+      placement: { x: 600, y: 700 },
+      baseSize: { width: 128, height: 128 },
+    },
+    {
+      label: "Home",
+      href: "/",
       coverImage: null,
-      hoverImage: null,
-      placement: {
-        x: 0.1,
-        y: 0.1,
-      },
+      placement: { x: 700, y: 100 },
+      baseSize: { width: 128, height: 128 },
     },
   ],
 };
