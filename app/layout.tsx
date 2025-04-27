@@ -9,12 +9,12 @@ import { fontSans } from "@/config/fonts";
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
+    default: siteConfig.band,
+    template: `%s - ${siteConfig.band}`,
   },
   description: siteConfig.description,
   icons: {
-    icon: "/favicon.ico",
+    // icon: "/favicon.ico",
   },
 };
 
